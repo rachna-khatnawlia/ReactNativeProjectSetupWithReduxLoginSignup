@@ -11,15 +11,16 @@ export default function Button({
     onPress = () => { },
 }) {
     return (
-
         <TouchableOpacity
-            style={{
-                ...styles.btnStyle,
-                ...btnStyle,
-            }}
-            onPress={onPress}>
-            {!!btnIcon ? <Image source={btnIcon} style={styles.imgIcon} /> : <View />}
-
+            style={{ ...styles.btnStyle, ...btnStyle,}}
+            onPress={onPress}
+        >
+            {
+                !!btnIcon ?
+                    <Image source={btnIcon} style={styles.imgIcon} />
+                    :
+                    <View />
+            }
 
             <Text style={{
                 ...styles.buttonTxt,
@@ -29,7 +30,6 @@ export default function Button({
             <View />
 
         </TouchableOpacity>
-
     );
 }
 
@@ -37,13 +37,13 @@ const styles = StyleSheet.create({
     btnStyle: {
         height: moderateScale(52),
         width: "100%",
-        backgroundColor: '#837893',
+        backgroundColor: colors.themeColor,
         borderRadius: moderateScale(3),
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        alignSelf:'center',
-        marginBottom:moderateScaleVertical(14)
+        alignSelf: 'center',
+        marginBottom: moderateScaleVertical(14)
     },
     buttonTxt: {
         fontSize: textScale(16),
